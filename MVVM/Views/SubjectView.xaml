@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_EX.MVVM.Views.SubjectView"
+            >
+
+    <Grid x:Name="background" RowDefinitions="0.2*, 0.2*, 0.1*, 0.3*,0.8*, 0.9*">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0.0" Color="#26F232">
+                </GradientStop>
+                <GradientStop Offset="0.23" Color="#0AB014">
+                </GradientStop>
+                <GradientStop Offset="0.45" Color="#1EC41E">
+                </GradientStop>
+                <GradientStop Offset="0.78" Color="#00FF00">
+                </GradientStop>
+                <GradientStop Offset="0.88" Color="#0CCE0C">
+                </GradientStop>
+                <GradientStop Offset="1" Color="#18FF18">
+                </GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+
+
+
+        <Label Text="Materia" Grid.Row="1" HorizontalOptions="Center" FontSize="Header" FontFamily="students"/>
+
+        <Image Source="imagen_materia_1.png"  HeightRequest="250" HorizontalOptions="Start" Grid.Row="4" Margin="100"/>
+        <Image Source="imagen_materia_2.png"  HeightRequest="300" HorizontalOptions="End" Grid.Row="4" Margin="100"/>
+
+
+        <VerticalStackLayout Spacing="20" Grid.Row="2">
+
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Nombre de la materia:" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+                <Entry BackgroundColor="White" Placeholder="Ej. Historia" PlaceholderColor="Gray" WidthRequest="250" Text="{Binding subject.Name}" FontFamily="primaryI"/>
+            </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                <Label Text="Rubros:" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+
+                   <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Entry BackgroundColor="White" Placeholder="Ej. Asistencia" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.Rubric1}" FontFamily="primaryI" />
+                    <Entry BackgroundColor="White" Placeholder="Ej. Proyecto" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.Rubric2}" FontFamily="primaryI" />
+                    <Entry BackgroundColor="White" Placeholder="Ej. Tareas" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.Rubric3}" FontFamily="primaryI" />
+                   </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                <Label Text="Valor en porcentaje (decimal):" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+
+                    <HorizontalStackLayout Spacing="110" HorizontalOptions="Center">
+                    <Label Text="{Binding subject.Rubric1}" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="{Binding subject.Rubric2}" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="{Binding subject.Rubric3}" FontSize="Small" FontFamily="primaryI"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.30" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.ValueRubric1}" FontFamily="primaryI" />
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.30" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.ValueRubric2}" FontFamily="primaryI" />
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.40" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.ValueRubric3}" FontFamily="primaryI" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+                <VerticalStackLayout Spacing="10">
+                <Label Text="Calificación:" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+
+                    <HorizontalStackLayout Spacing="110" HorizontalOptions="Center">
+                    <Label Text="{Binding subject.Rubric1}" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="{Binding subject.Rubric2}" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="{Binding subject.Rubric3}" FontSize="Small" FontFamily="primaryI"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Entry BackgroundColor="White" Placeholder="Ej. 10" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.GradeRubric1}" FontFamily="primaryI"/>
+                    <Entry BackgroundColor="White" Placeholder="Ej. 8" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.GradeRubric2}" FontFamily="primaryI"/>
+                    <Entry BackgroundColor="White" Placeholder="Ej. 7" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding subject.GradeRubric3}" FontFamily="primaryI"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+
+                <Button Text="Sacar calificación" WidthRequest="225" Command="{Binding CmdAverage}" FontFamily="primaryI" FontSize="Title" BackgroundColor="Purple"/>
+                <Button Text="Reiniciar datos" WidthRequest="225" Command="{Binding CmdReboot}" FontFamily="primaryI" FontSize="Title" BackgroundColor="Purple"/>
+
+            </HorizontalStackLayout>
+            
+
+
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+</ContentPage>

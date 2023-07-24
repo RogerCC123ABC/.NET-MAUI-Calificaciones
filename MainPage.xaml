@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_EX.MainPage"
+            xmlns:local="clr-namespace:TDMPW_412_3P_EX.MVVM.Views"
+             BarBackgroundColor="Purple">
+
+    <ContentPage IconImageSource="bienvenida.png">
+
+        <Grid x:Name="background" RowDefinitions="0.2*, 0.2*, 0.1*, 0.2*,0.8*, 0.9*">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0.0" Color="#26F232">
+                    </GradientStop>
+                    <GradientStop Offset="0.23" Color="#0AB014">
+                    </GradientStop>
+                    <GradientStop Offset="0.45" Color="#1EC41E">
+                    </GradientStop>
+                    <GradientStop Offset="0.78" Color="#00FF00">
+                    </GradientStop>
+                    <GradientStop Offset="0.88" Color="#0CCE0C">
+                    </GradientStop>
+                    <GradientStop Offset="1" Color="#18FF18">
+                    </GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+
+            <Label Text="¡Bienvenida!" Grid.Row="1" HorizontalOptions="Center" FontSize="Header" FontFamily="students"/>
+
+            <HorizontalStackLayout Spacing="90" Grid.Row="4" HorizontalOptions="Center">
+
+                <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" IsClippedToBounds="True" VerticalOptions="Center" BorderColor="Purple">
+                    <Image Source="imagen_escuela_1.jpg" Aspect="AspectFill" HeightRequest="200" WidthRequest="200" Margin="-20">
+                    </Image>
+                </Frame>
+
+                <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" IsClippedToBounds="True" VerticalOptions="Center" BorderColor="Purple">
+                    <Image Source="imagen_escuela_2.jpg" Aspect="AspectFill" HeightRequest="200" WidthRequest="200" Margin="-20">
+                    </Image>
+                </Frame>
+
+                <Frame CornerRadius="100" HeightRequest="200" WidthRequest="200" IsClippedToBounds="True" VerticalOptions="Center" BorderColor="Purple">
+                    <Image Source="imagen_materia_pagina_bienvenida.jpg" Aspect="AspectFill" HeightRequest="200" WidthRequest="200" Margin="-20">
+                    </Image>
+                </Frame>
+
+
+
+            </HorizontalStackLayout>
+
+            <Label Text="¡Calcula tu calificación final de la materia y si pasas el semestre o no!" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" FontFamily="primaryI"/>
+
+
+
+
+
+        </Grid>
+        
+        
+
+    </ContentPage>
+
+    <local:SubjectView IconImageSource="materia.png"/>
+    <local:SemesterView IconImageSource="semestre.png"/>
+
+
+
+</TabbedPage>

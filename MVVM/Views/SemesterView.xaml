@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TDMPW_412_3P_EX.MVVM.Views.SemesterView"
+            >
+    <Grid x:Name="background" RowDefinitions="0.2*, 0.2*, 0.1*, 0.3*,0.8*, 0.9*">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Offset="0.0" Color="#26F232">
+                </GradientStop>
+                <GradientStop Offset="0.23" Color="#0AB014">
+                </GradientStop>
+                <GradientStop Offset="0.45" Color="#1EC41E">
+                </GradientStop>
+                <GradientStop Offset="0.78" Color="#00FF00">
+                </GradientStop>
+                <GradientStop Offset="0.88" Color="#0CCE0C">
+                </GradientStop>
+                <GradientStop Offset="1" Color="#18FF18">
+                </GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+
+
+
+        <Label Text="Semestre" Grid.Row="1" HorizontalOptions="Center" FontSize="Header" FontFamily="students"/>
+
+        <Image Source="imagen_semestre_1.png"  HeightRequest="220" HorizontalOptions="Start" Grid.Row="4" Margin="100"/>
+        <Image Source="imagen_semestre_2.png"  HeightRequest="220" HorizontalOptions="End" Grid.Row="4" Margin="100"/>
+
+
+        <VerticalStackLayout Spacing="20" Grid.Row="2">
+
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Nombre de la materia:" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+                <Entry BackgroundColor="White" Placeholder="Ej. Historia" PlaceholderColor="Gray" WidthRequest="250" Text="{Binding semester.SubjectName}" FontFamily="primaryI"/>
+            </VerticalStackLayout>
+
+           
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Valor en porcentaje (decimal):" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+
+                <HorizontalStackLayout Spacing="90" HorizontalOptions="Center">
+                    <Label Text="Parcial 1" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="Parcial 2" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="Parcial 3" FontSize="Small" FontFamily="primaryI"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.30" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding semester.ValueParcial1}" FontFamily="primaryI"/>
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.30" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding semester.ValueParcial2}" FontFamily="primaryI"/>
+                    <Entry BackgroundColor="White" Placeholder="Ej. 0.40" PlaceholderColor="Gray" WidthRequest="150" Text="{Binding semester.ValueParcial3}" FontFamily="primaryI"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Calificación:" FontSize="Title" HorizontalTextAlignment="Center" FontFamily="primaryI"/>
+
+                <HorizontalStackLayout Spacing="90" HorizontalOptions="Center">
+                    <Label Text="Parcial 1" FontSize="Small" FontFamily="primaryI"/>
+                    <Label Text="Parcial 2" FontSize="Small" FontFamily="primaryI"/>
+                    
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Entry BackgroundColor="White" WidthRequest="150" Text="{Binding semester.GradeParcial1}" FontFamily="primaryI"/>
+                    <Entry BackgroundColor="White" WidthRequest="150" Text="{Binding semester.GradeParcial2}" FontFamily="primaryI"/>
+                  
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+
+                <Button Text="Mostrar resultado" WidthRequest="210" Command="{Binding CmdShowResult}" FontFamily="primaryI" FontSize="Title" BackgroundColor="Purple"/>
+                <Button Text="Reiniciar datos" WidthRequest="210" Command="{Binding CmdReboot}" FontFamily="primaryI" FontSize="Title" BackgroundColor="Purple"/>
+
+            </HorizontalStackLayout>
+
+            
+
+
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+</ContentPage>
